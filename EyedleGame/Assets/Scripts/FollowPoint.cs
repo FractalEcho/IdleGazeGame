@@ -83,7 +83,10 @@ public class FollowPoint : MonoBehaviour
 
                     if (Vector3.Distance(this.transform.position, followThis.position) > minDistance && rb != null)
                     {
-                        rb.AddForce(Vector3.Min(this.gameObject.transform.forward * walkAmount, this.gameObject.transform.forward * walkSpeed / 2f));
+                        if(rb.velocity.magnitude < walkSpeed)
+                        {
+                            rb.AddForce(Vector3.Min(this.gameObject.transform.forward * walkAmount, this.gameObject.transform.forward * walkSpeed / 2f));
+                        }
                         // Debug.Log("The dot is " + distanceBetween + " far away and we are walking toward it at " + rb.velocity.magnitude + ".");
 
                     }

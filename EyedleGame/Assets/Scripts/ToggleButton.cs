@@ -7,6 +7,8 @@ public class ToggleButton : MonoBehaviour
 {
     [SerializeField] bool mouseHoverEnabled = true;
     [SerializeField] protected FollowPoint followComponent;
+    [SerializeField] Material activeMat;
+    [SerializeField] Material deactiveMat;
 
     private bool focused = false;
     public enum FocusedMode 
@@ -79,8 +81,15 @@ public class ToggleButton : MonoBehaviour
                         focusedMode = FocusedMode.DEACTIVE;
                         followComponent.isWalking = false;
                         var renderer = GetComponent<Renderer>();
-                        renderer.material.color = Color.red;
-                        recur = true;
+                            if (deactiveMat != null)
+                            {
+                                renderer.material = deactiveMat;
+                            }
+                            else
+                            {
+                                renderer.material.color = Color.red;
+                            }
+                            recur = true;
                         OnDeactivate();
                     }
                 }
@@ -98,7 +107,15 @@ public class ToggleButton : MonoBehaviour
                         focusedMode = FocusedMode.ACTIVE;
                         followComponent.isWalking = true;
                         var renderer = GetComponent<Renderer>();
-                        renderer.material.color = Color.green;
+                            if (activeMat != null)
+                            {
+                                renderer.material = activeMat;
+                            }
+                            else 
+                            {
+                                renderer.material.color = Color.green;
+                            }
+                                                       
                         recur = true;
                         OnActivate();
                     }

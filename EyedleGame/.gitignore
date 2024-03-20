@@ -17,6 +17,7 @@
 /[Aa]ssets/TextMesh Pro/
 /[Aa]ssets/BIG_Environment_Pack_LP/
 /[Aa]ssets/Idyllic Nature/
+/[Aa]ssets/TerrainSampleAssets/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -29,6 +30,7 @@
 /[Aa]ssets/BIG_Environment_Pack_LP.meta
 /[Aa]ssets/Idyllic Nature.meta
 /[Aa]ssets/TextMesh Pro.meta
+/[Aa]ssets/TerrainSampleAssets.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
